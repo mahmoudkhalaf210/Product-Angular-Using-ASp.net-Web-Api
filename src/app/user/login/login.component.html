@@ -1,0 +1,70 @@
+<!-- <form #loginForm="ngForm">
+  <div>
+    <label>User Name</label>
+    <input type="text" name="userName" [(ngModel)]="user.userName" #userName="ngModel" required>
+    <p class="alert alert-danger" *ngIf="userName.errors?.['required']"> userName required</p>
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="text" name="userPassword" [(ngModel)]="user.password" #userPassword="ngModel" required>
+    <p class="alert alert-danger" *ngIf="userPassword.errors?.['required']"> Password required</p>
+    <p>{{loginForm.value | json}}</p>
+  </div>
+
+  <input type="button" value="Login" [disabled]="loginForm.invalid" (click)="checkUser()">{{userData?.id}}
+</form>
+
+ -->
+
+
+
+
+
+
+<div class="w-25 m-auto mt-5">
+  <form #loginForm="ngForm">
+    <div class="mb-3">
+      <label class="form-label">User Name</label>
+      <input type="text" class="form-control" name="username" [(ngModel)]="user.userName" #userName="ngModel" required>
+      <p *ngIf="userName.errors?.['required'] && userName.touched" style="color: red;">*User Name Required</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #password="ngModel"
+        required>
+      <p *ngIf="password.errors?.['required'] && userName.touched" style="color: red;">*Password Required</p>
+    </div>
+    <div class="text-center">
+      <input type="button" class="btn btn-primary" value="Login" [disabled]="loginForm.invalid" (click)="checkUser()">
+    </div>
+  </form>
+</div>
+
+
+
+
+<!--
+<form [formGroup]="userForm">
+  <div>
+    <label>User Name</label>
+    <input type="text" name="userName" formControlName="Name">
+    <p class="alert alert-danger" *ngIf="Name.errors?.['required']"> email required</p>
+    <p class="alert alert-danger" *ngIf="Name.errors?.['minLength']"> min length is 5 chrachters </p>
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="text" name="userEmail"  formControlName="email">
+  </div>
+  <div formGroupName="address">
+    <div>
+      <label>City</label>
+      <input type="text" name="userCity"  formControlName="city">
+    </div>
+    <div>
+      <label>Street</label>
+      <input type="text" name="userStreet"  formControlName="street">
+    </div>
+  </div>
+
+  <input type="button" value="Login" [disabled]="userForm.invalid">
+</form> -->

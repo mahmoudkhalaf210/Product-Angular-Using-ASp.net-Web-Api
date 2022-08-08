@@ -1,0 +1,30 @@
+
+<div class="input-group w-25 mb-3 m-auto mt-5">
+  <input type="text" class="form-control" #data>
+  <button class="btn btn-outline-secondary" type="button" (click)="insert(data.value)">Add</button>
+</div>
+
+
+<input type="text" class="form-control w-25 mb-3 m-auto" #in (input)="filtering(in.value)">
+
+<div class="add">
+<ul class="m-auto ul">
+  <ng-container *ngIf="newUserData.length">
+    <li class="mb-3" *ngFor="let user of newUserData">
+      <div>{{user.name}}</div>
+      <div><button class="btn btn-danger" (click)="delete(user.id)">complete</button></div>
+    </li>
+  </ng-container>
+  <ng-container *ngIf="!newUserData.length">
+    <li class="mb-3" *ngFor="let user of userData">
+      <div>{{user.name}}</div>
+      <div><button class="btn btn-danger" (click)="delete(user.id)">complete</button></div>
+    </li>
+  </ng-container>
+
+</ul>
+</div>
+
+<!-- <p *appColor>test</p> -->
+
+

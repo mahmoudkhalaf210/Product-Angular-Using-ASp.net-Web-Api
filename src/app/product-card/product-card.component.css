@@ -1,0 +1,9 @@
+.fav{
+    margin-left: 15px;
+    font-size: 25px !important;
+    cursor: pointer;
+    color: gray;
+}
+.fav:hover{
+  color: red;
+}

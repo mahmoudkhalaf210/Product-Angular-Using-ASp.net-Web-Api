@@ -1,0 +1,12 @@
+<div class="card mb-2 mt-3">
+    <img class="card-img-top" style="height: 300px;" src="{{productData?.image}}" alt="Card image cap">
+    <div class="card-body text-center" style="overflow: hidden;">
+      <h5 class="card-title" style="height: 100px; cursor: pointer;" [routerLink]="['/product-details', productData!.id]">{{productData?.name}}</h5>
+      <h6>{{productData?.price}}$</h6>
+      <p class="card-text">{{productData?.description | slice: [30,'...']}}</p>
+      <a class="btn btn-primary me-1" (click)="sendProduct()">Add To Cart</a>
+      <a class="btn btn-success me-1" [routerLink]="['/edit', productData!.id]">Edit</a>
+      <a class="btn btn-danger me-1" (click)="delete(productData!.id)">Delete</a>
+      <a (click)="sendToFav()" [routerLink]="['/fav-product']"><i class="fa fa-star fav" aria-hidden="true"></i></a>
+    </div>
+  </div>
